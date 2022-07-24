@@ -1,32 +1,3 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@mabichuks 
-udacity
-/
-nd9991-c3-hello-world-exercise-solution
-Public
-Code
-Issues
-1
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-nd9991-c3-hello-world-exercise-solution/roles/setup/tasks/main.yml
-@SudKul
-SudKul Working solution
-Latest commit c768afa on Sep 1, 2021
- History
- 1 contributor
- 45 lines (37 sloc)  712 Bytes
-
 ---
 - name: "update apt packages."
   become: yes
@@ -38,18 +9,17 @@ Latest commit c768afa on Sep 1, 2021
   apt:
     upgrade: yes
 
-
 - name: remove dependencies that are no longer required
   become: yes
   apt:
     autoremove: yes
 
-- name: "install dependencies."
+- name: "Install dependencies"
   become: yes
   apt:
     name: ["nodejs", "npm"]
     state: latest
-    update_cache: yes
+    update-cache: yes
 
 - name: "install pm2"
   become: yes
@@ -59,8 +29,8 @@ Latest commit c768afa on Sep 1, 2021
     production: yes
     state: present
 
-- name: Creates directory
-  file:
+- name: "Create directory"
+  file: 
     path: ~/web
     state: directory
 
