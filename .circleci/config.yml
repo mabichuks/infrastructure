@@ -44,6 +44,7 @@ jobs:
     docker:
     - image: alpine:latest
     steps:
+    - checkout
     - run:
         name: Create Cloudformation Stack
         command: |
